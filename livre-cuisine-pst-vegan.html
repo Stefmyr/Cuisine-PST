@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>50 recettes vegan faciles aux proteines de soja texturees</title>
+  <style>
+    :root {
+      --ink: #28231f;
+      --muted: #695f55;
+      --paper: #fffaf1;
+      --panel: #ffffff;
+      --line: #e8dcca;
+      --tomato: #d9573f;
+      --leaf: #2f7d59;
+      --mustard: #e0a92f;
+      --blue: #2f6f8f;
+      --shadow: 0 18px 50px rgba(74, 53, 31, .14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(224,169,47,.22), transparent 32rem),
+        linear-gradient(180deg, #fff6e7 0%, var(--paper) 45%, #f7efe2 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .cover {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+      gap: 2.4rem;
+      align-items: center;
+      padding: clamp(1.4rem, 5vw, 5rem);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cover h1 {
+      max-width: 820px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 8vw, 7.2rem);
+      line-height: .92;
+      letter-spacing: 0;
+    }
+
+    .cover p {
+      max-width: 620px;
+      margin: 1.4rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+    }
+
+    .cover-img {
+      min-height: 500px;
+      border-radius: 28px 28px 8px 8px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.2)),
+        url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80") center/cover;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-img::after {
+      content: "PST party";
+      position: absolute;
+      right: 1.1rem;
+      bottom: 1.1rem;
+      background: rgba(255,250,241,.92);
+      color: var(--tomato);
+      font-weight: 900;
+      padding: .55rem .8rem;
+      border-radius: 999px;
+      transform: rotate(-4deg);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-top: 1.6rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.4rem;
+      padding: .45rem .8rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      font-weight: 750;
+      color: #473b32;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    .intro, .toc, .recipe {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(74, 53, 31, .07);
+    }
+
+    .intro {
+      padding: clamp(1.1rem, 3vw, 2rem);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .intro h2, .toc h2 {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+    }
+
+    .tip {
+      border-left: 5px solid var(--leaf);
+      padding: .7rem .9rem;
+      background: #f6fbf4;
+      border-radius: 8px;
+    }
+
+    .tip strong { display: block; margin-bottom: .2rem; }
+
+    .toc {
+      padding: clamp(1.1rem, 3vw, 2rem);
+      margin-bottom: 1.8rem;
+    }
+
+    .toc-grid {
+      columns: 3 260px;
+      column-gap: 2rem;
+      padding-left: 1.1rem;
+      margin: .8rem 0 0;
+    }
+
+    .toc-grid li {
+      break-inside: avoid;
+      margin: 0 0 .45rem;
+      padding-left: .2rem;
+      color: var(--muted);
+    }
+
+    .recipe {
+      overflow: hidden;
+      margin: 1.6rem 0;
+      scroll-margin-top: 1rem;
+    }
+
+    .recipe-head {
+      display: grid;
+      grid-template-columns: minmax(280px, 42%) 1fr;
+      min-height: 360px;
+    }
+
+    .recipe-photo {
+      min-height: 360px;
+      background: #ddd center/cover;
+    }
+
+    .recipe-title {
+      padding: clamp(1.2rem, 4vw, 2.4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .recipe-title h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .kicker {
+      color: var(--tomato);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .82rem;
+      margin-bottom: .7rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+
+    .meta span {
+      background: #f6ecd9;
+      border-radius: 999px;
+      padding: .38rem .7rem;
+      font-weight: 760;
+      color: #514337;
+    }
+
+    .recipe-body {
+      display: grid;
+      grid-template-columns: minmax(220px, .85fr) 1.15fr;
+      gap: 1.4rem;
+      padding: clamp(1.2rem, 4vw, 2.2rem);
+    }
+
+    .ingredients, .steps {
+      min-width: 0;
+    }
+
+    h3 {
+      margin: 0 0 .7rem;
+      font-size: 1.08rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--blue);
+    }
+
+    ul, ol { margin-top: 0; }
+    li { margin-bottom: .45rem; }
+
+    .note {
+      margin-top: 1rem;
+      padding: .75rem .9rem;
+      border-radius: 10px;
+      background: #fff4d4;
+      color: #5e4a18;
+      font-weight: 650;
+    }
+
+    .footer {
+      padding: 2rem 0 4rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 820px) {
+      .cover, .recipe-head, .recipe-body, .intro {
+        grid-template-columns: 1fr;
+      }
+      .cover { min-height: auto; }
+      .cover-img { min-height: 360px; }
+      .recipe-title { padding-top: 1.5rem; }
+    }
+
+    @media print {
+      body { background: white; }
+      .cover { min-height: auto; padding: 1.2cm; }
+      main { width: auto; padding: 0; }
+      .recipe { break-inside: avoid; box-shadow: none; }
+      .recipe-photo { min-height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="cover">
+    <section>
+      <div class="kicker">Livre de cuisine vegan pour debutants</div>
+      <h1>50 recettes faciles aux proteines de soja texturees</h1>
+      <p>Des plats simples, rassasiants et joyeux pour transformer les PST en bolognaise, tacos, boulettes, curry, gratins, bowls et petites merveilles du quotidien.</p>
+      <div class="badges">
+        <span class="badge">100% vegan</span>
+        <span class="badge">Niveau debutant</span>
+        <span class="badge">Recettes familiales</span>
+        <span class="badge">Fun mais pas complique</span>
+      </div>
+    </section>
+    <div class="cover-img" role="img" aria-label="Bol vegan colore"></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Avant de cuisiner</h2>
+      <div class="tip"><strong>Hydrater les PST</strong> Compte 1 volume de PST pour 1 a 1,5 volume de bouillon chaud. Attends 10 minutes, puis egoutte si besoin.</div>
+      <div class="tip"><strong>Donner du gout</strong> Les PST adorent la sauce soja, le miso, le paprika fume, l'ail, le cumin, le curry, la tomate et les herbes.</div>
+      <div class="tip"><strong>Texture sympa</strong> Fais-les revenir 4 a 6 minutes apres hydratation: elles deviennent plus dorees, plus gourmandes, moins "spongieuses".</div>
+    </section>
+
+    <section class="toc">
+      <h2>Sommaire</h2>
+      <ol class="toc-grid" id="toc"></ol>
+    </section>
+
+    <section id="recipes"></section>
+  </main>
+
+  <footer class="footer">
+    Photos thematiques chargees depuis LoremFlickr. Livre concu pour debuter tranquillement avec les PST.
+  </footer>
+
+  <script>
+    const recipes = [
+      {
+        title: "Bolognaise express aux PST",
+        time: "30 min", servings: "4", level: "ultra facile", image: "vegan,pasta,bolognese",
+        ingredients: ["120 g de PST fines", "250 ml de bouillon vegetal chaud", "1 oignon", "2 gousses d'ail", "500 g de coulis de tomate", "1 c. a soupe de sauce soja", "1 c. a cafe d'origan", "300 g de spaghetti", "Huile d'olive, sel, poivre"],
+        steps: ["Hydrate les PST dans le bouillon 10 minutes.", "Fais revenir l'oignon et l'ail haches dans un filet d'huile.", "Ajoute les PST egouttees, la sauce soja et fais dorer 5 minutes.", "Verse le coulis, ajoute l'origan et mijote 12 minutes.", "Sers avec les spaghetti cuits et un tour de poivre."],
+        note: "Astuce fun: ajoute une pincee de cacao non sucre pour une sauce plus profonde."
+      },
+      {
+        title: "Chili sin carne debutant",
+        time: "35 min", servings: "4", level: "facile", image: "vegan,chili,beans",
+        ingredients: ["120 g de PST", "250 ml de bouillon", "1 oignon", "1 poivron rouge", "1 boite de haricots rouges", "1 boite de tomates concassees", "1 c. a cafe de cumin", "1 c. a cafe de paprika fume", "Mais, sel, poivre"],
+        steps: ["Hydrate les PST dans le bouillon chaud.", "Fais revenir oignon et poivron en des.", "Ajoute PST, cumin et paprika, puis remue 3 minutes.", "Ajoute tomates, haricots et mais.", "Laisse mijoter 20 minutes et ajuste l'assaisonnement."],
+        note: "Parfait avec du riz, des tortillas ou une cuillere de yaourt vegetal."
+      },
+      {
+        title: "Tacos moelleux PST avocat",
+        time: "25 min", servings: "4", level: "facile", image: "vegan,tacos",
+        ingredients: ["100 g de PST fines", "220 ml de bouillon", "8 petites tortillas", "1 avocat", "1 tomate", "1/2 oignon rouge", "1 citron vert", "1 c. a cafe d'epices mexicaines", "Coriandre, sel"],
+        steps: ["Hydrate les PST puis egoutte-les.", "Poele-les avec les epices mexicaines 5 minutes.", "Ecrase l'avocat avec citron vert et sel.", "Coupe tomate et oignon en petits des.", "Garnis les tortillas avec avocat, PST, tomate, oignon et coriandre."],
+        note: "Option croustillante: passe les tortillas 30 secondes a la poele."
+      },
+      {
+        title: "Hachis parmentier vegan",
+        time: "45 min", servings: "4", level: "facile", image: "vegan,shepherds,pie",
+        ingredients: ["120 g de PST", "250 ml de bouillon", "800 g de pommes de terre", "1 oignon", "2 carottes", "2 c. a soupe de concentre de tomate", "100 ml de creme soja", "Muscade, huile, sel"],
+        steps: ["Cuis les pommes de terre et ecrase-les avec creme soja, sel et muscade.", "Hydrate les PST.", "Fais revenir oignon et carottes en petits des.", "Ajoute PST et concentre de tomate, cuis 8 minutes.", "Verse dans un plat, couvre de puree et gratine 15 minutes a 200 deg C."],
+        note: "Le dessus adore une fine pluie de chapelure."
+      },
+      {
+        title: "Lasagnes rapides aux PST",
+        time: "55 min", servings: "6", level: "facile", image: "vegan,lasagna",
+        ingredients: ["140 g de PST", "300 ml de bouillon", "700 g de sauce tomate", "Feuilles de lasagnes", "500 ml de bechamel vegan", "1 oignon", "2 c. a soupe de levure maltée", "Herbes italiennes"],
+        steps: ["Hydrate les PST.", "Fais revenir l'oignon, ajoute PST, sauce tomate et herbes.", "Etale sauce, lasagnes, bechamel en couches.", "Termine par bechamel et levure maltée.", "Enfourne 35 minutes a 190 deg C."],
+        note: "Laisse reposer 10 minutes avant de couper: les parts seront plus nettes."
+      },
+      {
+        title: "Boulettes tomate basilic",
+        time: "35 min", servings: "4", level: "facile", image: "vegan,meatballs,tomato",
+        ingredients: ["100 g de PST fines", "200 ml de bouillon", "3 c. a soupe de farine de pois chiche", "2 c. a soupe de chapelure", "1 c. a soupe de sauce soja", "1 c. a cafe d'ail en poudre", "400 g de sauce tomate", "Basilic"],
+        steps: ["Hydrate puis presse legerement les PST.", "Melange avec farine, chapelure, sauce soja et ail.", "Forme des boulettes avec les mains humides.", "Dore-les a la poele 8 minutes.", "Ajoute la sauce tomate et mijote 10 minutes."],
+        note: "Mains humides = boulettes sages."
+      },
+      {
+        title: "Burger PST barbecue",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,burger",
+        ingredients: ["120 g de PST fines", "220 ml de bouillon", "1 petite boite de haricots rouges", "2 c. a soupe de sauce barbecue", "3 c. a soupe de flocons d'avoine", "4 pains burger", "Salade, tomate, cornichons"],
+        steps: ["Hydrate les PST et ecrase les haricots.", "Melange PST, haricots, sauce barbecue et avoine.", "Forme 4 steaks et laisse poser 5 minutes.", "Poele 5 minutes par face.", "Monte les burgers avec crudites et sauce."],
+        note: "Pour un steak plus ferme, ajoute 1 c. a soupe de farine."
+      },
+      {
+        title: "Curry coco PST pois chiches",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,curry,coconut",
+        ingredients: ["100 g de PST", "220 ml de bouillon", "1 boite de pois chiches", "400 ml de lait de coco", "2 c. a soupe de pate de curry", "1 oignon", "1 poignee d'epinards", "Riz"],
+        steps: ["Hydrate les PST.", "Fais revenir l'oignon avec la pate de curry.", "Ajoute PST et pois chiches.", "Verse le lait de coco et mijote 12 minutes.", "Ajoute les epinards en fin de cuisson et sers avec du riz."],
+        note: "Un trait de citron vert reveille tout le plat."
+      },
+      {
+        title: "Nouilles sautees soja gingembre",
+        time: "25 min", servings: "3", level: "tres facile", image: "vegan,noodles,stir,fry",
+        ingredients: ["90 g de PST", "200 ml de bouillon", "250 g de nouilles", "2 carottes", "1 courgette", "3 c. a soupe de sauce soja", "1 c. a cafe de gingembre rape", "1 c. a soupe d'huile de sesame"],
+        steps: ["Hydrate les PST et cuis les nouilles.", "Coupe les legumes en fins batonnets.", "Saute les PST 4 minutes avec gingembre.", "Ajoute les legumes puis les nouilles.", "Verse sauce soja et huile de sesame, melange 2 minutes."],
+        note: "Garde les legumes un peu croquants: c'est plus vivant."
+      },
+      {
+        title: "Nuggets vegan croustillants",
+        time: "35 min", servings: "4", level: "facile", image: "vegan,nuggets",
+        ingredients: ["120 g de grosses PST", "300 ml de bouillon", "80 g de farine", "120 ml de lait vegetal", "100 g de chapelure", "1 c. a cafe de paprika", "1 c. a soupe de sauce soja", "Huile"],
+        steps: ["Hydrate les grosses PST avec bouillon et sauce soja.", "Prepare une pate avec farine, lait vegetal et paprika.", "Trempe chaque morceau dans la pate puis la chapelure.", "Dispose sur plaque huilee.", "Cuis 20 minutes a 210 deg C en retournant a mi-cuisson."],
+        note: "La sauce ketchup-moutarde-sirop d'erable fait tres cantine joyeuse."
+      },
+      {
+        title: "Ragout de lentilles et PST",
+        time: "40 min", servings: "4", level: "facile", image: "vegan,stew,lentils",
+        ingredients: ["80 g de PST", "180 ml de bouillon", "180 g de lentilles vertes cuites", "2 carottes", "1 oignon", "400 g de tomates concassees", "1 feuille de laurier", "Thym"],
+        steps: ["Hydrate les PST.", "Fais revenir oignon et carottes.", "Ajoute PST, lentilles, tomates, laurier et thym.", "Mijote 25 minutes a feu doux.", "Retire le laurier et sers bien chaud."],
+        note: "Encore meilleur le lendemain, comme beaucoup de ragouts."
+      },
+      {
+        title: "Wraps frais PST citron",
+        time: "20 min", servings: "4", level: "tres facile", image: "vegan,wrap",
+        ingredients: ["90 g de PST fines", "180 ml de bouillon", "4 grandes tortillas", "1 concombre", "1 carotte", "Salade", "2 c. a soupe de yaourt soja", "1 citron", "Menthe"],
+        steps: ["Hydrate les PST puis laisse tiedir.", "Melange yaourt soja, jus de citron, menthe et sel.", "Rape la carotte et coupe le concombre.", "Tartine les tortillas de sauce.", "Ajoute salade, legumes et PST puis roule serre."],
+        note: "Coupe en deux en biais: effet snack pro immediat."
+      },
+      {
+        title: "Pizza PST champignons",
+        time: "35 min", servings: "2-3", level: "facile", image: "vegan,pizza,mushroom",
+        ingredients: ["1 pate a pizza", "80 g de PST", "160 ml de bouillon", "150 g de sauce tomate", "200 g de champignons", "1 oignon rouge", "Origan", "Fromage vegetal optionnel"],
+        steps: ["Hydrate les PST.", "Poele champignons, oignon et PST 6 minutes.", "Etale la sauce tomate sur la pate.", "Ajoute garniture, origan et fromage vegetal.", "Enfourne 15 a 18 minutes a 220 deg C."],
+        note: "PST + champignons = duo umami sans prise de tete."
+      },
+      {
+        title: "Keftas vegan minute",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,kofta",
+        ingredients: ["120 g de PST fines", "220 ml de bouillon", "2 c. a soupe de farine", "1 c. a cafe de cumin", "1 c. a cafe de coriandre moulue", "1/2 c. a cafe de cannelle", "Persil", "Sauce yaourt soja"],
+        steps: ["Hydrate puis presse les PST.", "Melange avec farine, epices et persil hache.", "Forme des boudins autour de petits pics ou sans pics.", "Poele 8 a 10 minutes en tournant.", "Sers avec sauce yaourt soja citronnee."],
+        note: "Ne les manipule pas trop au debut: laisse la croute se former."
+      },
+      {
+        title: "Dahl rouge aux PST",
+        time: "35 min", servings: "4", level: "facile", image: "vegan,dahl",
+        ingredients: ["70 g de PST", "150 ml de bouillon", "200 g de lentilles corail", "1 oignon", "1 c. a soupe de curry", "400 ml de lait de coco", "500 ml d'eau", "Epinards"],
+        steps: ["Hydrate les PST.", "Fais revenir l'oignon avec le curry.", "Ajoute lentilles, eau et lait de coco.", "Mijote 15 minutes.", "Ajoute PST et epinards, cuis encore 8 minutes."],
+        note: "Texture epaisse ou soupe? Ajoute un peu d'eau selon ton humeur."
+      },
+      {
+        title: "Courgettes farcies aux PST",
+        time: "45 min", servings: "4", level: "facile", image: "vegan,stuffed,zucchini",
+        ingredients: ["4 courgettes rondes ou longues", "100 g de PST", "220 ml de bouillon", "1 oignon", "200 g de sauce tomate", "2 c. a soupe de chapelure", "Herbes de Provence"],
+        steps: ["Coupe les courgettes et creuse-les.", "Hydrate les PST.", "Fais revenir oignon, chair de courgette hachee et PST.", "Ajoute sauce tomate et herbes.", "Farcis, saupoudre de chapelure et cuis 25 minutes a 190 deg C."],
+        note: "Pose les chapeaux des courgettes de travers: c'est plus mignon."
+      },
+      {
+        title: "Pad thai simplifie aux PST",
+        time: "30 min", servings: "3", level: "facile", image: "vegan,pad,thai",
+        ingredients: ["90 g de PST", "200 ml de bouillon", "250 g de nouilles de riz", "2 c. a soupe de beurre de cacahuete", "2 c. a soupe de sauce soja", "1 citron vert", "1 carotte", "Pousses de soja", "Cacahuetes"],
+        steps: ["Hydrate les PST et cuis les nouilles.", "Melange beurre de cacahuete, sauce soja, citron vert et 3 c. a soupe d'eau.", "Saute PST et carotte rapee.", "Ajoute nouilles et sauce.", "Sers avec pousses de soja et cacahuetes."],
+        note: "La sauce doit napper, pas coller: ajoute une cuillere d'eau si besoin."
+      },
+      {
+        title: "Moussaka vegan facile",
+        time: "1 h", servings: "4", level: "facile", image: "vegan,moussaka",
+        ingredients: ["2 aubergines", "120 g de PST", "250 ml de bouillon", "500 g de sauce tomate", "1 oignon", "1 c. a cafe de cannelle", "400 ml de bechamel vegan", "Huile d'olive"],
+        steps: ["Coupe les aubergines en tranches et cuis-les 20 minutes au four.", "Hydrate les PST.", "Fais revenir oignon, PST, sauce tomate et cannelle.", "Monte aubergine, sauce PST puis bechamel.", "Enfourne 25 minutes a 190 deg C."],
+        note: "La cannelle est discrete mais change tout."
+      },
+      {
+        title: "Empanadas poelees aux PST",
+        time: "40 min", servings: "4", level: "facile", image: "vegan,empanadas",
+        ingredients: ["1 pate brisee vegan", "90 g de PST", "180 ml de bouillon", "1 oignon", "1 poivron", "1 c. a cafe de paprika", "2 c. a soupe de sauce tomate", "Lait vegetal pour dorer"],
+        steps: ["Hydrate les PST.", "Fais revenir oignon, poivron, PST, paprika et sauce tomate.", "Decoupe des disques de pate.", "Garnis, replie et ferme a la fourchette.", "Badigeonne et cuis 20 minutes a 200 deg C."],
+        note: "A manger avec les doigts, officiellement."
+      },
+      {
+        title: "Soupe tomate vermicelles et PST",
+        time: "25 min", servings: "4", level: "tres facile", image: "vegan,tomato,soup",
+        ingredients: ["70 g de PST fines", "1 l de bouillon vegetal", "500 g de coulis de tomate", "80 g de vermicelles", "1 c. a cafe d'origan", "1 gousse d'ail", "Huile d'olive"],
+        steps: ["Fais revenir l'ail dans un filet d'huile.", "Ajoute coulis, bouillon et origan.", "Verse les PST directement dans la soupe.", "Mijote 10 minutes.", "Ajoute les vermicelles et cuis selon le paquet."],
+        note: "Recette parfaite quand le frigo fait la sieste."
+      },
+      {
+        title: "Riz saute facon cantonais vegan",
+        time: "25 min", servings: "4", level: "facile", image: "vegan,fried,rice",
+        ingredients: ["90 g de PST", "180 ml de bouillon", "350 g de riz cuit froid", "150 g de petits pois", "1 carotte", "3 c. a soupe de sauce soja", "1 c. a soupe d'huile neutre", "Ciboule"],
+        steps: ["Hydrate les PST.", "Fais sauter carotte en des et petits pois.", "Ajoute PST et fais dorer.", "Ajoute le riz froid et separe les grains.", "Assaisonne avec sauce soja et ciboule."],
+        note: "Le riz de la veille gagne toujours."
+      },
+      {
+        title: "PST teriyaki et brocoli",
+        time: "25 min", servings: "3", level: "facile", image: "vegan,teriyaki,broccoli",
+        ingredients: ["100 g de grosses PST", "220 ml de bouillon", "1 brocoli", "3 c. a soupe de sauce soja", "1 c. a soupe de sirop d'erable", "1 c. a soupe de vinaigre de riz", "1 c. a cafe de maizena", "Riz"],
+        steps: ["Hydrate les PST et cuis le brocoli a la vapeur.", "Melange soja, sirop, vinaigre, maizena et 80 ml d'eau.", "Poele les PST jusqu'a coloration.", "Ajoute sauce et brocoli.", "Remue jusqu'a ce que la sauce brille."],
+        note: "Brillant dans l'assiette, minimal dans l'effort."
+      },
+      {
+        title: "Gratin de pates aux PST",
+        time: "40 min", servings: "4", level: "facile", image: "vegan,pasta,bake",
+        ingredients: ["300 g de pates", "100 g de PST", "220 ml de bouillon", "400 g de sauce tomate", "200 ml de creme soja", "1 c. a soupe de levure maltée", "Chapelure"],
+        steps: ["Cuis les pates 2 minutes de moins que le paquet.", "Hydrate les PST.", "Melange pates, PST, sauce tomate et creme.", "Verse dans un plat.", "Saupoudre levure et chapelure, gratine 20 minutes a 200 deg C."],
+        note: "Le coin croustillant du gratin est une recompense de chef."
+      },
+      {
+        title: "Salade tiede PST patate douce",
+        time: "35 min", servings: "3", level: "facile", image: "vegan,sweet,potato,salad",
+        ingredients: ["90 g de PST", "180 ml de bouillon", "2 patates douces", "Roquette", "1 c. a soupe de tahini", "1 citron", "1 c. a cafe de paprika", "Graines de sesame"],
+        steps: ["Coupe les patates douces et cuis 25 minutes au four.", "Hydrate les PST.", "Poele les PST avec paprika.", "Melange tahini, citron, eau et sel.", "Assemble roquette, patate douce, PST, sauce et sesame."],
+        note: "Chaud + frais + cremeux: trio tres debutant-friendly."
+      },
+      {
+        title: "Couscous rapide aux PST",
+        time: "35 min", servings: "4", level: "facile", image: "vegan,couscous",
+        ingredients: ["100 g de PST", "250 ml de bouillon", "300 g de semoule", "2 carottes", "1 courgette", "1 boite de pois chiches", "1 c. a cafe de ras el hanout", "500 ml de bouillon pour legumes"],
+        steps: ["Hydrate les PST.", "Fais revenir les legumes en morceaux avec les epices.", "Ajoute pois chiches, PST et bouillon.", "Mijote 20 minutes.", "Prepare la semoule et sers ensemble."],
+        note: "Ajoute des raisins secs si tu aimes le petit twist sucre."
+      },
+      {
+        title: "Fajitas poivrons PST",
+        time: "25 min", servings: "4", level: "facile", image: "vegan,fajitas",
+        ingredients: ["100 g de PST", "200 ml de bouillon", "3 poivrons", "1 oignon", "1 c. a cafe de cumin", "1 c. a cafe de paprika fume", "8 tortillas", "Sauce salsa"],
+        steps: ["Hydrate les PST.", "Emince poivrons et oignon.", "Saute legumes 8 minutes.", "Ajoute PST et epices, cuis 5 minutes.", "Sers dans tortillas avec salsa."],
+        note: "Pose tout sur la table et chacun construit sa fajita."
+      },
+      {
+        title: "Mac and cheese vegan proteine",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,mac,and,cheese",
+        ingredients: ["300 g de macaroni", "80 g de PST fines", "160 ml de bouillon", "250 ml de creme soja", "3 c. a soupe de levure maltée", "1 c. a cafe de moutarde", "1/2 c. a cafe d'ail en poudre", "Sel"],
+        steps: ["Hydrate les PST.", "Cuis les macaroni.", "Chauffe creme, levure maltée, moutarde, ail et sel.", "Ajoute PST et pates.", "Melange jusqu'a obtenir une sauce bien cremeuse."],
+        note: "Orange fluo non obligatoire, gourmandise obligatoire."
+      },
+      {
+        title: "Aubergines laquees miso PST",
+        time: "40 min", servings: "3", level: "facile", image: "vegan,miso,eggplant",
+        ingredients: ["2 aubergines", "80 g de PST", "170 ml de bouillon", "1 c. a soupe de miso", "1 c. a soupe de sauce soja", "1 c. a soupe de sirop d'erable", "Riz", "Ciboule"],
+        steps: ["Coupe les aubergines en deux et quadrille la chair.", "Cuis 25 minutes au four a 200 deg C.", "Hydrate les PST.", "Melange miso, soja et sirop, puis poele avec les PST.", "Depose sur aubergines et parsème de ciboule."],
+        note: "Le miso sale deja: goute avant d'ajouter du sel."
+      },
+      {
+        title: "PST facon kebab maison",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,kebab,pita",
+        ingredients: ["120 g de PST en lamelles ou grosses", "250 ml de bouillon", "1 c. a cafe de cumin", "1 c. a cafe de paprika", "1/2 c. a cafe d'ail", "4 pains pita", "Salade, tomate, oignon", "Sauce yaourt soja"],
+        steps: ["Hydrate les PST puis egoutte bien.", "Poele-les avec epices et un filet d'huile jusqu'a coloration.", "Chauffe les pains pita.", "Ajoute crudites, PST et sauce.", "Sers tout de suite."],
+        note: "Pour l'effet snack, emballe dans du papier cuisson."
+      },
+      {
+        title: "Burrito riz haricots PST",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,burrito",
+        ingredients: ["100 g de PST", "200 ml de bouillon", "4 grandes tortillas", "250 g de riz cuit", "1 boite de haricots noirs", "1 avocat", "Salsa", "Epices mexicaines"],
+        steps: ["Hydrate et poele les PST avec les epices.", "Rechauffe riz et haricots.", "Ecrase l'avocat avec sel et citron.", "Garnis les tortillas.", "Replie en burritos et dore 1 minute par face."],
+        note: "Ne surcharge pas trop: le burrito aime rester roulable."
+      },
+      {
+        title: "Sauce sloppy joe vegan",
+        time: "25 min", servings: "4", level: "tres facile", image: "vegan,sloppy,joe",
+        ingredients: ["120 g de PST fines", "240 ml de bouillon", "1 oignon", "250 g de sauce tomate", "2 c. a soupe de ketchup", "1 c. a soupe de sauce soja", "1 c. a cafe de moutarde", "4 pains moelleux"],
+        steps: ["Hydrate les PST.", "Fais revenir l'oignon.", "Ajoute PST, sauce tomate, ketchup, soja et moutarde.", "Mijote 12 minutes jusqu'a texture epaisse.", "Garnis les pains avec la sauce chaude."],
+        note: "Prevois des serviettes: le nom annonce l'ambiance."
+      },
+      {
+        title: "Tajine simplifie PST abricots",
+        time: "40 min", servings: "4", level: "facile", image: "vegan,tagine",
+        ingredients: ["100 g de PST", "220 ml de bouillon", "2 carottes", "1 oignon", "1 boite de pois chiches", "8 abricots secs", "1 c. a cafe de cumin", "1 c. a cafe de cannelle", "Semoule"],
+        steps: ["Hydrate les PST.", "Fais revenir oignon, carottes, cumin et cannelle.", "Ajoute PST, pois chiches, abricots et 300 ml d'eau.", "Mijote 25 minutes.", "Sers avec de la semoule."],
+        note: "Sale legerement: les abricots apportent deja du relief."
+      },
+      {
+        title: "Galettes PST pommes de terre",
+        time: "35 min", servings: "4", level: "facile", image: "vegan,potato,patties",
+        ingredients: ["90 g de PST fines", "180 ml de bouillon", "500 g de pommes de terre", "2 c. a soupe de farine", "1 oignon nouveau", "Persil", "Huile, sel, poivre"],
+        steps: ["Rape les pommes de terre et presse-les.", "Hydrate puis presse les PST.", "Melange pommes de terre, PST, farine, oignon et persil.", "Forme des galettes.", "Poele 5 minutes par face."],
+        note: "Un couvercle aide l'interieur a cuire sans bruler l'exterieur."
+      },
+      {
+        title: "PST a la tomate facon merguez douce",
+        time: "25 min", servings: "4", level: "facile", image: "vegan,spicy,tomato,stew",
+        ingredients: ["120 g de PST", "250 ml de bouillon", "1 c. a cafe de paprika fume", "1/2 c. a cafe de cumin", "1 pincee de piment", "400 g de sauce tomate", "1 oignon", "Semoule ou riz"],
+        steps: ["Hydrate les PST.", "Fais revenir l'oignon avec les epices.", "Ajoute les PST et fais dorer 5 minutes.", "Verse la sauce tomate.", "Mijote 12 minutes et sers avec semoule ou riz."],
+        note: "Dose le piment comme un bouton de volume."
+      },
+      {
+        title: "One pot orzo aux PST",
+        time: "30 min", servings: "4", level: "tres facile", image: "vegan,orzo",
+        ingredients: ["250 g d'orzo", "80 g de PST fines", "700 ml de bouillon", "250 g de tomates cerises", "1 courgette", "1 c. a cafe d'herbes italiennes", "2 c. a soupe de creme soja"],
+        steps: ["Mets orzo, PST, bouillon, tomates coupees et courgette en des dans une casserole.", "Porte a fremissement.", "Cuis 12 a 14 minutes en remuant souvent.", "Ajoute la creme soja.", "Laisse reposer 3 minutes avant de servir."],
+        note: "Une casserole, peu de vaisselle, beaucoup de satisfaction."
+      },
+      {
+        title: "Bruschettas PST tomates",
+        time: "20 min", servings: "4", level: "tres facile", image: "vegan,bruschetta",
+        ingredients: ["8 tranches de pain", "70 g de PST fines", "140 ml de bouillon", "3 tomates", "1 gousse d'ail", "Basilic", "Huile d'olive", "Vinaigre balsamique"],
+        steps: ["Hydrate les PST.", "Coupe les tomates en des avec basilic, huile et balsamique.", "Frotte le pain avec l'ail et grille-le.", "Poele rapidement les PST avec un filet d'huile.", "Depose PST et tomates sur le pain."],
+        note: "A servir vite pour garder le pain croustillant."
+      },
+      {
+        title: "Patates garnies PST creme ciboulette",
+        time: "50 min", servings: "4", level: "facile", image: "vegan,loaded,potato",
+        ingredients: ["4 grosses pommes de terre", "90 g de PST", "180 ml de bouillon", "150 ml de creme soja", "Ciboulette", "1 c. a cafe de paprika", "Mais", "Sel, poivre"],
+        steps: ["Cuis les pommes de terre au four 45 minutes a 210 deg C.", "Hydrate les PST.", "Poele les PST avec paprika.", "Melange creme soja, ciboulette, sel et poivre.", "Ouvre les patates et garnis de PST, mais et creme."],
+        note: "Repas complet de soir de semaine, option canape autorisee."
+      },
+      {
+        title: "PST facon bourguignon rapide",
+        time: "45 min", servings: "4", level: "facile", image: "vegan,bourguignon,stew",
+        ingredients: ["120 g de grosses PST", "300 ml de bouillon", "250 g de champignons", "2 carottes", "1 oignon", "300 ml de vin rouge ou bouillon", "1 c. a soupe de farine", "Thym, laurier"],
+        steps: ["Hydrate les PST.", "Fais revenir oignon, carottes et champignons.", "Ajoute PST et farine, remue.", "Verse vin ou bouillon, ajoute thym et laurier.", "Mijote 25 minutes."],
+        note: "Avec une puree, c'est le dimanche en version facile."
+      },
+      {
+        title: "Quesadillas PST fromage vegetal",
+        time: "20 min", servings: "3", level: "tres facile", image: "vegan,quesadilla",
+        ingredients: ["6 tortillas", "80 g de PST", "160 ml de bouillon", "100 g de fromage vegetal rape", "1 poivron", "Epices mexicaines", "Salsa"],
+        steps: ["Hydrate et poele les PST avec les epices.", "Coupe le poivron en petits des.", "Garnis une demi-tortilla de PST, poivron et fromage vegetal.", "Replie et poele 2 a 3 minutes par face.", "Coupe en triangles et sers avec salsa."],
+        note: "Le triangle croustillant motive meme les grandes journees."
+      },
+      {
+        title: "PST au beurre de cacahuete",
+        time: "25 min", servings: "4", level: "facile", image: "vegan,peanut,stew",
+        ingredients: ["100 g de PST", "220 ml de bouillon", "1 oignon", "2 c. a soupe de beurre de cacahuete", "400 g de tomates concassees", "1 patate douce", "Epinards", "Riz"],
+        steps: ["Hydrate les PST.", "Fais revenir l'oignon et la patate douce en petits des.", "Ajoute tomates et 200 ml d'eau, cuis 12 minutes.", "Ajoute PST et beurre de cacahuete.", "Termine avec les epinards et sers avec riz."],
+        note: "Cremeux, proteine, reconfortant: le trio gagnant."
+      },
+      {
+        title: "Tomates farcies vegan",
+        time: "45 min", servings: "4", level: "facile", image: "vegan,stuffed,tomatoes",
+        ingredients: ["8 tomates", "100 g de PST fines", "200 ml de bouillon", "120 g de riz cuit", "1 oignon", "Persil", "1 c. a soupe de sauce soja", "Chapelure"],
+        steps: ["Coupe les chapeaux et vide les tomates.", "Hydrate les PST.", "Fais revenir oignon, PST, chair de tomate hachee et sauce soja.", "Melange avec riz et persil.", "Farcis, saupoudre de chapelure et cuis 30 minutes a 190 deg C."],
+        note: "Mets un fond d'eau dans le plat pour garder le moelleux."
+      },
+      {
+        title: "Ramen rapide aux PST",
+        time: "25 min", servings: "2", level: "tres facile", image: "vegan,ramen",
+        ingredients: ["60 g de PST", "1 l de bouillon", "2 portions de nouilles ramen", "1 c. a soupe de miso", "1 c. a soupe de sauce soja", "Champignons", "Epinards", "Ciboule"],
+        steps: ["Chauffe le bouillon avec soja et champignons.", "Ajoute les PST directement dans le bouillon.", "Mijote 8 minutes.", "Ajoute les nouilles puis les epinards.", "Hors feu, dilue le miso et ajoute la ciboule."],
+        note: "Ne fais pas bouillir le miso: il prefere la douceur."
+      },
+      {
+        title: "PST facon gyros",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,gyros",
+        ingredients: ["120 g de PST en morceaux", "250 ml de bouillon", "1 c. a cafe d'origan", "1 c. a cafe de paprika", "1/2 c. a cafe d'ail", "Pains pita", "Concombre, tomate, oignon", "Sauce tzatziki vegan"],
+        steps: ["Hydrate les PST.", "Poele-les avec origan, paprika et ail jusqu'a belle coloration.", "Coupe les crudites.", "Chauffe les pains pita.", "Garnis de PST, crudites et tzatziki vegan."],
+        note: "Un peu de citron par-dessus et hop, vacances dans l'assiette."
+      },
+      {
+        title: "Poelee pommes PST moutarde",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,potato,skillet",
+        ingredients: ["700 g de pommes de terre cuites", "90 g de PST", "180 ml de bouillon", "1 oignon", "1 c. a soupe de moutarde", "100 ml de creme soja", "Cornichons", "Persil"],
+        steps: ["Hydrate les PST.", "Fais dorer les pommes de terre en morceaux.", "Ajoute oignon et PST.", "Melange creme soja et moutarde puis verse dans la poele.", "Ajoute cornichons en rondelles et persil."],
+        note: "Les cornichons apportent le petit clin d'oeil acidule."
+      },
+      {
+        title: "Cannelloni PST epinards",
+        time: "55 min", servings: "4", level: "facile", image: "vegan,cannelloni",
+        ingredients: ["12 cannelloni", "100 g de PST fines", "200 ml de bouillon", "300 g d'epinards", "250 g de ricotta vegan ou tofu soyeux", "500 g de sauce tomate", "Herbes italiennes"],
+        steps: ["Hydrate les PST.", "Melange PST, epinards haches, ricotta vegan et herbes.", "Garnis les cannelloni.", "Dispose dans un plat avec sauce tomate.", "Cuis 35 minutes a 190 deg C."],
+        note: "Une poche de congelation coupee dans un coin aide a farcir facilement."
+      },
+      {
+        title: "PST sauce champignons creme",
+        time: "25 min", servings: "4", level: "tres facile", image: "vegan,mushroom,cream",
+        ingredients: ["100 g de PST", "220 ml de bouillon", "300 g de champignons", "1 echalote", "200 ml de creme soja", "1 c. a soupe de sauce soja", "Persil", "Pates ou riz"],
+        steps: ["Hydrate les PST.", "Fais revenir echalote et champignons.", "Ajoute PST et sauce soja, dore 4 minutes.", "Verse la creme soja.", "Mijote 5 minutes et ajoute persil."],
+        note: "Simple, cremeux, tres efficace sur des tagliatelles."
+      },
+      {
+        title: "Nachos vegan aux PST",
+        time: "25 min", servings: "4", level: "tres facile", image: "vegan,nachos",
+        ingredients: ["1 grand paquet de chips tortilla", "90 g de PST", "180 ml de bouillon", "1 boite de haricots rouges", "Salsa", "Fromage vegetal", "Jalapenos optionnels", "Avocat"],
+        steps: ["Hydrate et poele les PST avec un peu de salsa.", "Etale les chips dans un plat.", "Ajoute PST, haricots et fromage vegetal.", "Passe 8 minutes au four a 200 deg C.", "Termine avec avocat et jalapenos."],
+        note: "Plat de partage officiel des soirs sans ceremonie."
+      },
+      {
+        title: "Banh mi vegan PST",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,banh,mi",
+        ingredients: ["4 demi-baguettes", "100 g de PST", "200 ml de bouillon", "2 c. a soupe de sauce soja", "1 c. a soupe de sirop d'erable", "Carotte rapee", "Concombre", "Coriandre", "Mayonnaise vegan"],
+        steps: ["Hydrate les PST.", "Poele-les avec sauce soja et sirop d'erable.", "Toaste legerement les pains.", "Tartine de mayonnaise vegan.", "Ajoute PST, carotte, concombre et coriandre."],
+        note: "Quelques gouttes de vinaigre sur les carottes font merveille."
+      },
+      {
+        title: "PST facon bolognaise blanche",
+        time: "30 min", servings: "4", level: "facile", image: "vegan,creamy,pasta",
+        ingredients: ["120 g de PST", "250 ml de bouillon", "300 g de pates", "1 oignon", "1 branche de celeri", "200 ml de creme soja", "1 c. a soupe de levure maltée", "Noix de muscade"],
+        steps: ["Hydrate les PST.", "Fais revenir oignon et celeri tres fins.", "Ajoute PST et fais dorer.", "Verse creme soja, levure maltée et muscade.", "Melange avec les pates cuites."],
+        note: "Une version douce pour changer de la tomate."
+      },
+      {
+        title: "Crumble sale courge PST",
+        time: "50 min", servings: "4", level: "facile", image: "vegan,savory,crumble",
+        ingredients: ["600 g de courge en des", "90 g de PST", "180 ml de bouillon", "1 oignon", "80 g de farine", "60 g de margarine vegan", "40 g de flocons d'avoine", "Thym"],
+        steps: ["Cuis la courge 20 minutes au four.", "Hydrate les PST.", "Fais revenir oignon et PST avec thym.", "Mets courge et PST dans un plat.", "Sable farine, margarine et avoine, depose dessus et cuis 20 minutes."],
+        note: "Le crumble sale, c'est le pull moelleux de l'assiette."
+      }
+    ];
+
+    const toc = document.querySelector("#toc");
+    const recipesRoot = document.querySelector("#recipes");
+
+    recipes.forEach((recipe, index) => {
+      const id = `recette-${index + 1}`;
+      const tocItem = document.createElement("li");
+      tocItem.innerHTML = `<a href="#${id}">${recipe.title}</a>`;
+      toc.appendChild(tocItem);
+
+      const article = document.createElement("article");
+      article.className = "recipe";
+      article.id = id;
+      article.innerHTML = `
+        <div class="recipe-head">
+          <div class="recipe-photo" style="background-image: linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.18)), url('https://loremflickr.com/1100/850/${encodeURIComponent(recipe.image)}?lock=${index + 1}');" role="img" aria-label="Photo thematique: ${recipe.title}"></div>
+          <div class="recipe-title">
+            <div class="kicker">Recette ${String(index + 1).padStart(2, "0")}</div>
+            <h2>${recipe.title}</h2>
+            <div class="meta">
+              <span>${recipe.time}</span>
+              <span>${recipe.servings} pers.</span>
+              <span>${recipe.level}</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="ingredients">
+            <h3>Ingredients</h3>
+            <ul>${recipe.ingredients.map(item => `<li>${item}</li>`).join("")}</ul>
+          </div>
+          <div class="steps">
+            <h3>Preparation</h3>
+            <ol>${recipe.steps.map(item => `<li>${item}</li>`).join("")}</ol>
+            <div class="note">${recipe.note}</div>
+          </div>
+        </div>
+      `;
+      recipesRoot.appendChild(article);
+    });
+  </script>
+</body>
+</html>
